@@ -217,7 +217,7 @@ def main(en1, en2, sentence):
             while True:
                 #try:
                     #BUG: Encoding error if user input directly from command line.
-                    line = input('请输入中文句子，格式为 "name1 name2 sentence":')
+                    # line = input('请输入中文句子，格式为 "name1 name2 sentence":')
                     #Read file from test file
                     '''
                     infile = open('test.txt', encoding='utf-8')
