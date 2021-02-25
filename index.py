@@ -8,7 +8,7 @@ import os
 import network
 from sklearn.metrics import average_precision_score
 
-os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
 FLAGS = tf.app.flags.FLAGS
 
