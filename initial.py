@@ -257,7 +257,7 @@ def init():
 
 def seperate():
     print('reading training data')
-    x_train = np.load('./data/train_x.npy')
+    x_train = np.load('./data/train_x.npy', allow_pickle=True)
 
     train_word = []
     train_pos1 = []
@@ -291,7 +291,7 @@ def seperate():
     np.save('./data/train_pos2.npy', train_pos2)
 
     print('seperating test all data')
-    x_test = np.load('./data/testall_x.npy')
+    x_test = np.load('./data/testall_x.npy', allow_pickle=True)
     test_word = []
     test_pos1 = []
     test_pos2 = []
@@ -327,7 +327,7 @@ def seperate():
 
 # get answer metric for PR curve evaluation
 def getans():
-    test_y = np.load('./data/testall_y.npy')
+    test_y = np.load('./data/testall_y.npy', allow_pickle=True)
     eval_y = []
     for i in test_y:
         eval_y.append(i[1:])
