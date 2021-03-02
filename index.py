@@ -24,9 +24,13 @@ def pos_embed(x):
 
 
 def main_for_evaluation():
-    pathname = "./model/ATT_GRU_model-"
+    current_path = os.getcwd()
 
-    wordembedding = np.load('./data/vec.npy')
+    pathname = current_path + "/model/ATT_GRU_model-"
+
+    wordembedding = np.load(current_path+'/data/vec.npy')
+
+    # wordembedding = np.load('./data/vec.npy')
 
     test_settings = network.Settings()
     test_settings.vocab_size = 16693
@@ -128,9 +132,10 @@ def main_for_evaluation():
 def main(en1, en2, sentence):
 
     #If you retrain the model, please remember to change the path to your own model below:
-    pathname = "./model/ATT_GRU_model-9000"
-    
-    wordembedding = np.load('./data/vec.npy')
+    current_path = os.getcwd()
+    pathname = current_path + "/model/ATT_GRU_model-9000"
+    wordembedding = np.load(current_path+'/data/vec.npy')
+    # wordembedding = np.load('./data/vec.npy')
     test_settings = network.Settings()
     test_settings.vocab_size = 16693
     test_settings.num_classes = 12
