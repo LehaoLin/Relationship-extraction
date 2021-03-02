@@ -5,7 +5,7 @@ import numpy as np
 import time
 import datetime
 import os
-import network
+from . import network
 from sklearn.metrics import average_precision_score
 
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
