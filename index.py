@@ -326,14 +326,21 @@ def main(en1, en2, sentence):
             print("关系是:")
             #print(prob)
             top3_id = prob.argsort()[-3:][::-1]
+            result_list = []
             for n, rel_id in enumerate(top3_id):
                 print("No." + str(n+1) + ": " + id2relation[rel_id] + ", Probability is " + str(prob[rel_id]))
+                result_list.append(id2relation[rel_id])
             #except Exception as e:
             #    print(e)
             
             
             #result = model.evaluate_line(sess, input_from_line(line, char_to_id), id_to_tag)
             #print(result)
+    return result_list
 
+
+# 外部调用 main()
+if __name__ == "__main__":
+    print(main("JOJO","DIO","JOJO和DIO相爱相杀"))
 
 # tf.app.run()
